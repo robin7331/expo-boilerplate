@@ -7,6 +7,6 @@ export const Env = {
     | 'development'
     | 'staging'
     | 'production',
-  API_URL: process.env.EXPO_PUBLIC_API_URL ?? '__API_URL__',
+  API_URL: process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:3000',
   ...extra,
 } as const;

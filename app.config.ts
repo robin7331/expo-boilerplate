@@ -6,22 +6,22 @@ config({ path: path.resolve(__dirname, '.env.production') });
 config({ path: path.resolve(__dirname, '.env') });
 
 const appConfig: ExpoConfig = {
-  name: '__APP_NAME__',
-  slug: '__SLUG__',
+  name: 'Expo Boilerplate',
+  slug: 'expo-boilerplate',
   version: '1.0.0',
   orientation: 'portrait',
   icon: './assets/images/icon.png',
-  scheme: '__SLUG__app',
+  scheme: 'expo-boilerplateapp',
   userInterfaceStyle: 'automatic',
   ios: {
     icon: './assets/images/icon.png',
-    bundleIdentifier: '__BUNDLE_ID__',
+    bundleIdentifier: 'com.example.expoboilerplate',
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },
   },
   android: {
-    package: '__BUNDLE_ID__',
+    package: 'com.example.expoboilerplate',
     adaptiveIcon: {
       backgroundColor: '#FFFFFF',
       foregroundImage: './assets/images/android-icon-foreground.png',
