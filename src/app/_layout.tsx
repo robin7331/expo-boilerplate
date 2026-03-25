@@ -10,6 +10,7 @@ import { HeroUINativeProvider } from 'heroui-native';
 import { Uniwind } from 'uniwind';
 
 import { QueryProvider } from '@/lib/query';
+import { OfflineBanner } from '@/components/offline-banner';
 
 export default function RootLayout() {
   return (
@@ -27,6 +28,7 @@ export default function RootLayout() {
                   headerShown: false,
                 }}
               />
+              <OfflineBanner />
             </QueryProvider>
           </HeroUINativeProvider>
         </SafeAreaListener>

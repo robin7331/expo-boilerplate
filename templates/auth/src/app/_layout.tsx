@@ -11,6 +11,7 @@ import { HeroUINativeProvider } from 'heroui-native';
 import { Uniwind } from 'uniwind';
 
 import { QueryProvider } from '@/lib/query';
+import { OfflineBanner } from '@/components/offline-banner';
 import { useAuthStore } from '@/features/auth/store';
 import { getAuthToken } from '@/lib/api';
 
@@ -56,6 +57,7 @@ export default function RootLayout() {
                   }}
                 />
               </AuthGuard>
+              <OfflineBanner />
             </QueryProvider>
           </HeroUINativeProvider>
         </SafeAreaListener>
