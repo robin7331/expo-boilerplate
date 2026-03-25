@@ -4,11 +4,29 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "clean": "npx expo prebuild --clean",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "ios:device": "expo run:ios --device",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "build:dev": "eas build --profile development --platform ios",
+    "build:preview": "eas build --profile preview --platform ios",
+    "build:production": "eas build --profile production --platform ios",
+    "build:production:local": "bash scripts/sync-production-env.sh && set -a && . .env.production && set +a && eas build --profile production --platform ios --local",
+    "submit:ios": "eas submit --profile production --platform ios --path $(ls -t *.ipa | head -1)",
+    "lint": "expo lint",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "check-all": "npm run lint && npm run type-check && npm run test"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|native-base|react-native-svg)"
+    ]
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
