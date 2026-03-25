@@ -79,12 +79,16 @@ npm run submit:ios             # Submit .ipa to App Store Connect
 
 ## What: Design System
 
-See [DESIGN.md](DESIGN.md) for the complete design token reference:
-- Color palette (OKLCH values wired into global.css)
-- Typography scale
-- Spacing & border radius
-- Brand voice guidelines
-- Dark/light mode strategy
+[DESIGN.md](DESIGN.md) is the **single source of truth** for all visual design decisions.
+
+**When building UI or creating new screens:**
+- Read `DESIGN.md` first to understand the color palette, typography, spacing, and brand voice
+- Use the defined tokens — don't hardcode colors or introduce new ones without updating DESIGN.md
+
+**When the user changes the design (colors, typography, spacing, brand voice, dark/light mode):**
+1. Update `DESIGN.md` first with the new values
+2. Then update `src/global.css` to match — the `@theme` and `@layer theme` blocks must stay in sync with DESIGN.md
+3. Never update `global.css` without also updating `DESIGN.md`, and vice versa
 
 ## What: Available Skills
 
