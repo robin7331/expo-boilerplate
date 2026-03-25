@@ -50,6 +50,9 @@ const appConfig: ExpoConfig = {
     ],
     'expo-secure-store',
     'expo-sharing',
+    'expo-font',
+    'expo-image',
+    'expo-web-browser',
   ],
   experiments: {
     typedRoutes: true,
